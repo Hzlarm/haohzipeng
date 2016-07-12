@@ -1,0 +1,22 @@
+制作好的裸机程序是以.bin文件的形式存放的。我们需要把.bin文件拷贝到SD卡0x8200的位置才可以使用。
+那么使用dd命令来把.bin文件拷贝到SD卡0x8200的位置。
+我把裸机程序main.bin放在了~/NanoPi2/main.bin这里。
+当SD接入Ubuntu系统时，在/dev/里面会出现sdb这个文件，这就是sd卡。
+执行如下命令，可将main.bin复制到SD卡0x8200地址下
+
+sudo dd if=~/NanoPi2/main.bin of=/dev/sdb bs=1c seek=33280
+
+下面做一下解释:
+if就是input file输入文件，也就是main.bin
+
+of就是output file输出文件，对应的是SD卡起始地址0x0。
+
+bs=1c就是每次复制1个字节
+
+seek是输出的位置跳过多少bs
+
+0x8200换成十进制就是33280
+
+格式就是
+
+sudo dd if=输入文件 of=输出文件 bs=1c seek=要拷贝到地址的十进制数
