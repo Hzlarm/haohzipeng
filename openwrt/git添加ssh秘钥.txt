@@ -1,0 +1,23 @@
+git 添加ssh秘钥
+
+检查现有秘钥 ：
+	打开 Git Bash。ls -al ~/.ssh  
+	默认为：id_rsa.pub 或者 id_ecdsa.pub 或者 id_ed25519.pub
+	如果提示不存在则重新生成秘钥
+生成新 SSH 密钥
+	打开 Git Bash。ssh-keygen -t rsa -b 4096 -C " zhipeng.hao@minew.com"
+	三次回车：
+		1，回车默认文件即可 2、3回车默认无密码
+
+将 SSH 密钥添加到 GitHub 帐户。
+	clip < ~/.ssh/id_rsa.pub   //复制秘钥
+	添加到github中的管理ssh秘钥
+	
+	
+	
+	
+	
+	
+加了两步认证之后，我们的仓库只能使用SSH的方式来提交，不能使用HTTP方式了.
+按照如下文档的方式添加你们的SSH key
+https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
