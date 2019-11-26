@@ -4,12 +4,38 @@ Git基本常用命令如下：
    git init          把当前的目录变成可以管理的git仓库，生成隐藏.git文件。
    git add XX       把xx文件添加到暂存区去。
    git commit –m “XX”  提交文件 –m 后面的是注释。
+   git status        查看仓库状态
+   git diff  XX      查看XX文件修改了那些内容 
+   git rm XX          删除XX文件
 
-​	
+*****
+   git checkout -- XX   把XX文件在工作区的修改(删除)全部撤销。
+   git reset HEAD XX  把已经添加到了暂存区的文件退回到工作区，再执行上一条命令撤销修改(删除)。
+   git reset  --hard HEAD^ 或者 git reset  --hard HEAD~ 回退到上一个版本
+                        (如果想回退到100个版本，使用git reset –hard HEAD~100 )
+   git log          可以查看提交历史，以便确定要回退到哪个版本.
+   git reflog       查看历史记录的版本号id,	以便确定要回到未来的哪个版本
 
+*****
 
+   
 
-
+   git remote add origin https://github.com/tugenhua0707/testgit 关联一个远程库
+   git push –u(第一次要用-u 以后不需要) origin master 把当前master分支推送到远程库
+   git clone https://github.com/tugenhua0707/testgit  从远程库中克隆
+   git checkout –b dev  创建dev分支 并切换到dev分支上
+   git branch  查看当前所有的分支
+   git checkout master 切换回master分支
+   git merge dev    在当前的分支上合并dev分支
+   git branch –d dev 删除dev分支
+   git branch name  创建分支
+   git stash 把当前的工作隐藏起来 等以后恢复现场后继续工作
+   git stash list 查看所有被隐藏的文件列表
+   git stash apply 恢复被隐藏的文件，但是内容不删除
+   git stash drop 删除文件
+   git stash pop 恢复文件的同时 也删除文件
+   git remote 查看远程库的信息
+   git remote –v 查看远程库的详细信息
 
 
 
@@ -24,13 +50,20 @@ Git基本常用命令如下：
 ### 全局设置
 
 ```
-$ git config --global user.name "Hzlarm"
-$ git config --global user.email 731238375@qq.com 
+$ git config --global user.name "zhipeng.hao"
+$ git config --global user.email "zhipeng.hao@minew.com"
 ```
 
-配置完成之后会在$HOME目录下生成一个.gitconfig配置文件，具体参考[示例](.gitconfig)。
+配置完成之后会在$HOME目录下生成一个.gitconfig配置文件。
 
 `--local` 是将这些内容写入 project 下的 .git/config 文件中，每个project都可以有不同的配置。
+
+```
+$ git config --local user.name "Hzlarm"
+$ git config --local user.email "731238375@qq.com" 
+```
+
+
 
 ### 自动补全
 
