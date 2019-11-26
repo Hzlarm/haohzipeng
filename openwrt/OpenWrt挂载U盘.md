@@ -90,11 +90,13 @@
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20191112184116666.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h6bGFybQ==,size_16,color_FFFFFF,t_70)
 
-**iface 文件夹**
+**iface 文件夹** 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20191112184145994.png)
+
 **ntp 文件夹**
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20191112184215679.png)
 即使没有NTP同步，也会收到一个定期的热插拔事件，其中stratum=16，开机后大约每11分钟一次
+
 **USB文件夹**
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2019111218434757.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2h6bGFybQ==,size_16,color_FFFFFF,t_70)
 
